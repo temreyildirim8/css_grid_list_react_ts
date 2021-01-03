@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -8,6 +8,10 @@ import {
   StyledImg,
   Details,
   Title } from '../../components/MovieList/MovieListItem/MovieListItem';
+
+const OutsideWrapper = styled.div`
+  height: 60rem;
+`;
 
 const StyledWrapper = styled(MovieListItemWrapper)`
   height: 40rem;
@@ -33,15 +37,21 @@ const Detail = () => {
 
   const imageURL = 'http://image.tmdb.org/t/p/w780//' + location?.state?.image;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <StyledWrapper>
-      <StyledImg src={imageURL} alt={location?.state?.title} />
-      <StyledSpan>{location?.state?.rating.toFixed(1)}</StyledSpan>
-      <StyledDetails>
-        <Title>{location?.state?.title}</Title>
-        <Description>{location?.state?.description}</Description>
-      </StyledDetails>
-    </StyledWrapper>
+    <OutsideWrapper>
+      <StyledWrapper>
+        <StyledImg src={imageURL} alt={location?.state?.title} />
+        <StyledSpan>{location?.state?.rating.toFixed(1)}</StyledSpan>
+        <StyledDetails>
+          <Title>{location?.state?.title}</Title>
+          <Description>{location?.state?.description}</Description>
+        </StyledDetails>
+      </StyledWrapper>
+    </OutsideWrapper>
   );
 };
 
