@@ -1,7 +1,9 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 import styled from 'styled-components';
 
-const MovieListItemWrapper = styled.div`
+export const MovieListItemWrapper = styled.div`
   background: #fff;
   border: solid 1px #dedede;
   opacity: 1;
@@ -29,7 +31,7 @@ const MovieListItemWrapper = styled.div`
   }
 `;
 
-const StyledImg = styled.img`
+export const StyledImg = styled.img`
   width: 100%;
   height: 20rem;
   border-top-left-radius: 20px;
@@ -44,7 +46,7 @@ const StyledImg = styled.img`
   }
 `;
 
-const StyledSpan = styled.span`
+export const StyledSpan = styled.span`
   height: 2.5rem;
   width: 5rem;
   font-size: 2rem;
@@ -61,22 +63,14 @@ const StyledSpan = styled.span`
   justify-self: end;
 `;
 
-const Details = styled.div`
+export const Details = styled.div`
   margin-top: -2rem;
   grid-column: 1 / -1;
   padding: 2rem;
 `;
 
-const Title = styled.h3`
+export const Title = styled.h3`
   font-size: 1.2rem;
-`;
-
-const Description = styled.p`
-  font-size: 1rem;
-  padding-top: 1.1rem;
-  overflow: hidden;
-  margin: -2rem auto 0;
-  height: 11rem;
 `;
 
 interface MovieListItemProps {
@@ -87,11 +81,17 @@ interface MovieListItemProps {
   description: string;
 }
 
-const MovieListItem = ({ image, title, rating }: MovieListItemProps) => {
+const MovieListItem = ({ image, title, rating, description }: MovieListItemProps) => {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push('/detail', { title, image, rating, description });
+  };
+
   const imageURL = 'http://image.tmdb.org/t/p/w780//' + image;
 
   return (
-    <MovieListItemWrapper>
+    <MovieListItemWrapper onClick={handleClick}>
       <StyledImg src={imageURL} alt={title} />
       <StyledSpan>{rating.toFixed(1)}</StyledSpan>
       <Details>
