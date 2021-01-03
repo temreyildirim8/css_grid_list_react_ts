@@ -24,6 +24,10 @@ const StyledDetails = styled(Details)`
   margin-top: -7rem;
 `;
 
+const StyledTitle = styled(Title)`
+  font-size: 1.3rem;
+`;
+
 const Description = styled.div`
   font-size: 1rem;
   padding-top: 2rem;
@@ -47,7 +51,7 @@ const Detail = () => {
         <StyledImg src={imageURL} alt={location?.state?.title} />
         <StyledSpan>{location?.state?.rating.toFixed(1)}</StyledSpan>
         <StyledDetails>
-          <Title>{location?.state?.title}</Title>
+          <StyledTitle>{location?.state?.title}</StyledTitle>
           <Description>{location?.state?.description}</Description>
         </StyledDetails>
       </StyledWrapper>

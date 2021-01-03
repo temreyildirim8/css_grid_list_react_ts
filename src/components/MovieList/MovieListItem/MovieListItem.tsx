@@ -47,30 +47,30 @@ export const StyledImg = styled.img`
 `;
 
 export const StyledSpan = styled.span`
-  height: 2.5rem;
-  width: 5rem;
-  font-size: 2rem;
+  height: 2rem;
+  width: 4rem;
+  font-size: 1.5rem;
   text-align: center;
   font-weight: bold;
   margin: 1rem;
-  padding: 1rem;
+  padding: 0.3rem;
   background: white;
   border-radius: 50px;
   color: green;
   z-index: 2;
-  grid-row: 1 /3;
+  grid-row: 1 / 3;
   grid-column: 2 / 3;
   justify-self: end;
 `;
 
 export const Details = styled.div`
-  margin-top: -2rem;
+  margin-top: -1.5rem;
   grid-column: 1 / -1;
   padding: 2rem;
 `;
 
 export const Title = styled.h3`
-  font-size: 1.2rem;
+  font-size: 1rem;
 `;
 
 interface MovieListItemProps {

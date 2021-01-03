@@ -17,7 +17,7 @@ const MovieListItems = styled.div`
   grid-column: center-start / center-end;
   margin: -0.5rem 0 0 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 4rem;
   align-items: start;
   padding: 0 40px;
@@ -39,7 +39,7 @@ const MovieListItems = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const Title = styled.h2`
   text-align: left;
   padding: 20px 0 0 30px;
 
@@ -68,7 +68,7 @@ const MovieList = ({ movieData }: MovieListProps) => {
       <MovieListWrapper>
         <Title> Aksiyon/Fantastik Filmler </Title>
         <MovieListItems>
-          {movieData?.slice(0, 6).map((movie: any) => (
+          {movieData?.slice(0, 7).map((movie: any) => (
             <MovieListItem
               key={movie.id}
               image={movie.backdrop_path}
@@ -82,7 +82,7 @@ const MovieList = ({ movieData }: MovieListProps) => {
       <MovieListWrapper>
         <Title> Gerilim Filmleri </Title>
         <MovieListItems>
-          {movieData?.slice(6, 12).map((movie: any) => (
+          {movieData?.slice(7, 15).map((movie: any) => (
             <MovieListItem
               key={movie.id}
               image={movie.backdrop_path}
@@ -96,7 +96,7 @@ const MovieList = ({ movieData }: MovieListProps) => {
       <MovieListWrapper>
         <Title> Belgeseller </Title>
         <MovieListItems>
-          {movieData?.slice(12, 18).map((movie: any) => (
+          {movieData?.slice(0, 7).map((movie: any) => (
             <MovieListItem
               key={movie.id}
               image={movie.backdrop_path}
