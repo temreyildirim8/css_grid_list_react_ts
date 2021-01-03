@@ -87,7 +87,7 @@ interface MovieListItemProps {
   description: string;
 }
 
-const MovieListItem = ({ image, title, rating, description }: MovieListItemProps) => {
+const MovieListItem = ({ image, title, rating }: MovieListItemProps) => {
   const imageURL = 'http://image.tmdb.org/t/p/w780//' + image;
 
   return (
@@ -96,7 +96,6 @@ const MovieListItem = ({ image, title, rating, description }: MovieListItemProps
       <StyledSpan>{rating.toFixed(1)}</StyledSpan>
       <Details>
         <Title>{title}</Title>
-        {/* <Description>{description}</Description> */}
       </Details>
     </MovieListItemWrapper>
   );
