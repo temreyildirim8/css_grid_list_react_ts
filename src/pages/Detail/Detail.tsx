@@ -7,7 +7,7 @@ import {
   StyledSpan,
   StyledImg,
   Details,
-  Title } from '../../../components/MovieList/MovieListItem/MovieListItem';
+  Title } from '../../components/MovieList/MovieListItem/MovieListItem';
 
 const StyledWrapper = styled(MovieListItemWrapper)`
   height: 40rem;
