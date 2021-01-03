@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
-  background-image: linear-gradient(to right, #a71d8e 0, #001e42);
+  background-image: linear-gradient(to right, #a71d8e 0, #5c2483);
   height: 280px;
   margin-top: 50px;
 
