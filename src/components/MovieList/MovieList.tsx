@@ -54,6 +54,7 @@ interface MovieListSingleObject {
   id?: number;
   title?: string;
   vote_average?: number;
+  overview?: string;
 }
 
 interface MovieListProps {
