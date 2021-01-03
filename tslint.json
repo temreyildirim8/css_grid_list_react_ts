@@ -6,7 +6,9 @@
     "no-implicit-dependencies": [true, "dev"],
     "no-var-requires": false,
     "indent": false,
-    "quotemark": [true, "single", "avoid-escape"],
-    "ordered-imports": false
+    "quotemark": [false, "single", "avoid-escape"],
+    "ordered-imports": false,
+    "no-console": false,
+    "interface-name": false
   }
 }
