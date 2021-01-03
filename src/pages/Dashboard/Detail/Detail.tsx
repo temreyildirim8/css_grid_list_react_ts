@@ -2,31 +2,27 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { MovieListItemWrapper, StyledSpan, StyledImg  } from '../../../components/MovieList/MovieListItem/MovieListItem';
+import {
+  MovieListItemWrapper,
+  StyledSpan,
+  StyledImg,
+  Details,
+  Title } from '../../../components/MovieList/MovieListItem/MovieListItem';
 
 const StyledWrapper = styled(MovieListItemWrapper)`
-  background: #fff;
   height: 40rem;
   width: 70%;
-  margin: 0 auto;
+  margin: 40px auto 0;
   cursor: default;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
 `;
 
-const Details = styled.div`
-  margin-top: -2rem;
-  grid-column: 1 / -1;
-  padding: 2rem;
+const StyledDetails = styled(Details)`
+  margin-top: -7rem;
 `;
 
-const Title = styled.h3`
-  font-size: 1.2rem;
-`;
-
-const Description = styled.p`
+const Description = styled.div`
   font-size: 1rem;
-  padding-top: 1.1rem;
+  padding-top: 2rem;
   overflow: hidden;
   margin: -2rem auto 0;
   height: 11rem;
@@ -41,10 +37,10 @@ const Detail = () => {
     <StyledWrapper>
       <StyledImg src={imageURL} alt={location?.state?.title} />
       <StyledSpan>{location?.state?.rating.toFixed(1)}</StyledSpan>
-      <Details>
+      <StyledDetails>
         <Title>{location?.state?.title}</Title>
         <Description>{location?.state?.description}</Description>
-      </Details>
+      </StyledDetails>
     </StyledWrapper>
   );
 };
