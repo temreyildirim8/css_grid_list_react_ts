@@ -12,7 +12,7 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-      <Header title={''} description={''} />
+      <Header />
       <Switch>
         <Route path='/' component={Dashboard} exact={true} />
         <Route path='/detail' component={Detail} exact={true} />
